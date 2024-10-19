@@ -316,7 +316,7 @@ function Api.setup()
     loadOptionalConfig("OPENAI_API_TYPE", "OPENAI_API_TYPE", "api_type_cmd", function(type)
       if type == "azure" then
         loadAzureConfigs()
-        Api.AUTHORIZATION_HEADER = "api-key: " .. Api.OPENAI_API_KEY
+        Api.AUTHORIZATION_HEADER = "Authorization: Bearer " .. Api.OPENAI_API_KEY
       else
         Api.AUTHORIZATION_HEADER = "Authorization: Bearer " .. Api.OPENAI_API_KEY
       end
